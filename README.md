@@ -41,16 +41,64 @@ MONGO_URI=your_mongodb_connection_string
 
 
 
----
+🚀 Installation & Setup (Local)
+1️⃣ Clone the Repository
+git clone https://github.com/USERNAME/task-tracker-backend.git
+cd task-tracker-backend
 
-## ⚙️ Environment Variables
+2️⃣ Install Dependencies
+npm install
 
-Create a `.env` file in the root directory:
-
-```env
-PORT=5000
-MONGO_URI=your_mongodb_connection_string
+3️⃣ Start the Server
+npm run dev
 
 
-## 📁 Project Structure
+Server will run on:
 
+http://localhost:5000
+
+🔗 API Endpoints
+➕ Create Task
+POST /api/tasks
+
+
+Request Body
+
+{
+  "title": "Learn MERN",
+  "description": "Backend development",
+  "priority": "High",
+  "dueDate": "2026-02-15",
+  "status": "Pending"
+}
+
+📥 Get All Tasks
+GET /api/tasks
+
+🔄 Update Task Status
+PUT /api/tasks/:id
+
+
+Request Body
+
+{
+  "status": "Completed"
+}
+
+❌ Delete Task
+DELETE /api/tasks/:id
+
+🧠 Task Model (Schema)
+{
+  title: String (required),
+  description: String,
+  priority: Low | Medium | High,
+  dueDate: Date (required),
+  status: Pending | Completed,
+  createdAt: Date,
+  updatedAt: Date
+}
+
+🌐 Deployment
+
+The backend is deployed using Render.
